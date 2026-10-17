@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Şansını Dene, Sayıyı Bul!</title>
+
+  <!-- input() çalışsın diye gerekli yardımcı dosya. En üstte kalmalı. -->
+  <script src="./mini-coi.js"></script>
+
+  <!-- Python'u tarayıcıda çalıştıran PyScript -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@pyscript/core@0.7.31/dist/core.css">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@pyscript/core@0.7.31/dist/core.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #1e1f29;
+      color: #e6e6e6;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 16px;
+      box-sizing: border-box;
+    }
+    h1 { margin: 0 0 6px; font-size: 1.8rem; }
+    h2 { margin: 4px 0 8px; font-size: 1.4rem; font-weight: 700; text-align: center; color: #ffffff; }
+    p  { margin: 0 0 20px; color: #6f7287; font-size: 0.75rem; text-align: center; }
+    .terminal-kutu {
+      width: 100%;
+      max-width: 820px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      background: #000;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 18px;
+      padding: 10px 22px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: #4f7cff;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover { background: #3d68e8; }
+  </style>
+</head>
+<body>
+  <h1>🍀 Şansını Dene, Sayıyı Bul!</h1>
+  <h2>Bil bakalım 1 ile 100 arasında hangi sayıyı tuttum?</h2>
+  <p>İlk açılışta oyunun yüklenmesi 10–20 saniye sürebilir.</p>
+
+  <div class="terminal-kutu">
+    <!-- Senin oyunun burada çalışıyor -->
+    <script type="py" terminal worker src="./sayitutma.py"></script>
+  </div>
+
+  <button onclick="location.reload()">Yeniden başlat</button>
+</body>
+</html>
